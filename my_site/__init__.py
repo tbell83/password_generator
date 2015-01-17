@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.context_processor
 def utility_processor():
 	def get_pass():
-		return passwd_gen.gen_pass()
+		return passwd_gen.generate_password()
 	return dict(get_pass=get_pass)
 
 @app.route('/')
