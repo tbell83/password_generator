@@ -1,9 +1,10 @@
 from random import randint
+import os
 
 def generate_password():
-	noun_list = open('/usr/bin/my_site/my_site/application/nounlist.txt')
-	adjective_list = open('/usr/bin/my_site/my_site/application/adjectives.txt')
-	verb_list = open('/usr/bin/my_site/my_site/application/verbs.txt')
+	noun_list = open(os.path.join(os.path.dirname(__file__),'/usr/bin/my_site/my_site/application/nounlist.txt'))
+	adjective_list = open(os.path.join(os.path.dirname(__file__),'/usr/bin/my_site/my_site/application/adjectives.txt'))
+	verb_list = open(os.path.join(os.path.dirname(__file__),'/usr/bin/my_site/my_site/application/verbs.txt'))
 
 	nouns = []
 	adjectives = []
