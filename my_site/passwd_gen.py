@@ -25,7 +25,7 @@ def generate_password():
 	noun_count = len(nouns)
 	adjective_count = len(adjectives)
 	verb_count = len(verbs)
-	print nouns
+
 	verb = verbs[randint(0,verb_count)].capitalize()
 	adjective = adjectives[randint(0,adjective_count)].capitalize()
 	noun = nouns[randint(0, noun_count)].capitalize()
@@ -48,4 +48,3 @@ def gen_pass():
 	passwd = "{0}{1}{2}".format(words[randint(0,length)].capitalize(), words[randint(0,length)].capitalize(), randint(10,99))
 	return passwd
 
-print generate_password()
