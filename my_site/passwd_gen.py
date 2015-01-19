@@ -9,7 +9,7 @@ def generate_password():
 	nouns = []
 	adjectives = []
 	verbs = []
-        symbols = ['!','@','#','$','%','^','&','*','_','-','_','+']
+        symbols = ['!','@','#','$','%','^','&','*','-','_','+']
 
 	for noun in noun_list:
 		nouns.extend([noun.translate(None, "\r\n ")])
