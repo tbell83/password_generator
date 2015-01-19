@@ -14,6 +14,10 @@
 			location.reload();
 		}
 	</script>
+	
+	<script>
+		document.getElementsByClassName("password")[0].innerHTML = "{{get_pass()}}"
+	</script>
 </head>
 <body>
 <div class='row'>
@@ -30,7 +34,7 @@
 			<div id='content'>
 				<p><h3>Here's a randomly generated password:</h3></p>
 				<div id='passwd'>
-					<p><h4>{{ get_pass() }}</h4></p>
+					<h4><p class="password"></p></p></h4>
 				</div>
 				<button onclick="refreshPage()" type='button' class='btn btn-default'>Get Another</button>
 			</div>
