@@ -9,6 +9,7 @@ def generate_password():
 	nouns = []
 	adjectives = []
 	verbs = []
+        symbols = ['!','@','#','$','%','^','&','*','_','-','_','+']
 
 	for noun in noun_list:
 		nouns.extend([noun.translate(None, "\r\n ")])
@@ -25,13 +26,15 @@ def generate_password():
 	noun_count = len(nouns)
 	adjective_count = len(adjectives)
 	verb_count = len(verbs)
+	symbol_count = len(symbols)
 
 	verb = verbs[randint(0,verb_count)].capitalize()
 	adjective = adjectives[randint(0,adjective_count)].capitalize()
 	noun = nouns[randint(0, noun_count)].capitalize()
 	number = randint(10,99)
+	symbol = symbols[randint(0,symbol_count)]
 
-	passwd = "{0}{1}{2}{3}".format(verb,adjective,noun,number)
+	passwd = "{0}{1}{2}{3}{4}".format(verb,adjective,noun,symbol,number)
 	return passwd
 	
 
