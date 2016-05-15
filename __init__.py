@@ -12,12 +12,11 @@ def utility_processor():
 
 @app.route('/')
 def root():
-	return 'This is a web server'
+	return render_template('password.html')
 
-@app.route('/password')
-def password():
-	return render_template('index.html')
+# @app.route('/password')
+# def password():
+# 	return render_template('password.html')
 
 if __name__ == '__main__':
-	app.debug = True
 	app.run(host='0.0.0.0')
