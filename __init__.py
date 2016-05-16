@@ -6,8 +6,6 @@ import code_deploy
 
 app = Flask(__name__)
 
-#This is a test
-
 
 @app.context_processor
 def utility_processor():
