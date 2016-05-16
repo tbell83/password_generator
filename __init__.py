@@ -26,8 +26,7 @@ def deploy():
     data = request.data
     signature = request.headers.get('X-Hub-Signature')
     if github_verify.verifyHmacHash(data, signature):
-        cwd = '/home/tbell/password.tombell.io/password_generator'
-        deployment_status = code_deploy.deploy(cwd)
+        deployment_status = code_deploy.deploy()
         return deployment_status
     else:
         return 'Authentication Failed'
