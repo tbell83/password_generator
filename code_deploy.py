@@ -1,5 +1,9 @@
-import subprocess
+from subprocess import Popen, PIPE
+import os
 
 
 def deploy():
-    subprocess.call(["git", "pull"])
+    cwd = os.path.dirname(os.path.realpath(__file__))
+    p = Popen(['git', 'pull'], stdout=PIPE, stderr=PIPE, cwd=cwd)
+    stdout, stderr = p.communicate()
+    return stdout

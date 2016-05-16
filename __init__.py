@@ -6,6 +6,7 @@ import code_deploy
 
 app = Flask(__name__)
 
+
 @app.context_processor
 def utility_processor():
     def get_pass():
@@ -23,10 +24,11 @@ def deploy():
     data = request.data
     signature = request.headers.get('X-Hub-Signature')
     if github_verify.verifyHmacHash(data, signature):
-        code_deploy.deploy()
-        return 'Successful Deployment'
+        cwd = '/home/tbell/password.tombell.io/password_generator'
+        deployment_status = code_deploy.deploy(cwd)
+        return deployment_status
     else:
-        return 'No Good'
+        return 'Authentication Failed'
 
 if __name__ == '__main__':
     app.debug = True
