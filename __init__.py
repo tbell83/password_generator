@@ -26,7 +26,7 @@ def deploy():
         code_deploy.deploy()
         return 'Successful Deployment'
     else:
-        return 'No Vas'
+        return 'No Good'
 
 if __name__ == '__main__':
     app.debug = True
